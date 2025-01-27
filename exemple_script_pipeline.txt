@@ -1,0 +1,32 @@
+pipeline {
+    agent {
+        node {
+            label 'agent'
+        }
+    }
+    triggers {
+        pollSCM('H/2 8-19 * * 1-5')
+    }
+    stages {
+        stage('Téléchargement des sources') {
+            steps {
+                  git branch: 'main', url: 'https://github.com/nolanconan/division.git'
+            }
+        }
+        stage('Compilation des sources') {
+            steps {
+                sh 'cd TCP && make division'
+            }
+        }
+        stage('Vérification dynamique') {
+            steps {
+                sh 'cd TCP && make testsuite'
+            }
+        }
+        stage('Analyse statique') {
+            steps {
+                sh 'cd TCP && make analyse'
+            }
+        }
+    }
+}
