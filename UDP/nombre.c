@@ -38,6 +38,7 @@ int est_un_port_non_reserve(const char * buffer) {
 	return est_un_entier_positif(buffer) && convertir_nombre(buffer) > 1023 && convertir_nombre(buffer) < 65536;
 }
 
+/* Vérifier si la chaîne de caractères représente une adresse IP */
 int est_une_adresse_IP(const char * buffer) {
     struct sockaddr_in sa;
     int result = inet_pton(AF_INET, buffer, &(sa.sin_addr));
