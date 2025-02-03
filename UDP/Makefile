@@ -15,7 +15,7 @@ division: client_udp_division.c serveur_udp_division.c $(EXE_DIR) $(OBJS)
 analyse: $(SRCS)
 	cppcheck --error-exitcode=1 .
 	
-testsuite: build testsuite.c 
+testsuite: testsuite.c 
 	$(COMPILER) $(OBJS) testsuite.c -lcunit -o $@
 	./$@
 	
