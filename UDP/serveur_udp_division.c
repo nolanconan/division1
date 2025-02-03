@@ -31,6 +31,6 @@ int main(int argc, char** argv) {
 
     // Ajoutez ici le code pour recevoir et traiter les messages UDP
 
-    close(sockfd);
+    fermer_connexion(sockfd);
     exit(0);
 }
