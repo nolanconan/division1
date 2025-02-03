@@ -29,10 +29,10 @@ erreur.o: erreur.c erreur.h
 nombre.o: nombre.c nombre.h
 	$(COMPILER) -c nombre.c -o nombre.o
 client_udp_division.o: client_udp_division.c
-    	$(COMPILER) -c client_udp_division.c -o client_udp_division.o
+	$(COMPILER) -c client_udp_division.c -o client_udp_division.o
 
 serveur_udp_division.o: serveur_udp_division.c
-    	$(COMPILER) -c serveur_udp_division.c -o serveur_udp_division.o
+	$(COMPILER) -c serveur_udp_division.c -o serveur_udp_division.o
 
 
 $(EXE_DIR):
